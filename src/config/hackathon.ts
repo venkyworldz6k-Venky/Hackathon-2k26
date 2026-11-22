@@ -31,7 +31,7 @@ export const HACKATHON_CONFIG = {
       "Project mentoring by senior AI engineers",
       "Submission management and grand finale judging coordination"
     ],
-    contactEmail: "hackathon@protonsolutions.tech",
+    contactEmail: "potrontech-hr@proton.me",
     website: "https://protonsolutions.tech"
   },
 
@@ -276,10 +276,10 @@ export const HACKATHON_CONFIG = {
   // Official Channel & Registration Links (Configurable)
   placeholders: {
     unstopEventUrl: "https://unstop.com/hackathons/gemini-agentic-coding-hackathon-2026-proton-solutions",
-    googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc-EXAMPLE-PROTON-GEMINI-2026/viewform",
+    googleFormUrl: "https://forms.gle/YKmaTnHpTi65envRA",
     whatsappChannelUrl: "https://whatsapp.com/channel/0029VbDpw0m1iUxbAtgMO71Z",
     discordServerUrl: "#",
-    githubOrgUrl: "https://github.com/venkyworldz6k-Venky/Hackathon-2k26",
+    githubOrgUrl: "#",
   },
 
   // Payment System Information
@@ -480,16 +480,16 @@ export const HACKATHON_CONFIG = {
     {
       id: "faq-10",
       question: "Where can I contact the organizers?",
-      answer: "You can reach Proton Solutions directly at support@protonsolutions.tech or via our official WhatsApp community channel and contact section on this website.",
+      answer: "You can reach Proton Solutions directly at potrontech-hr@proton.me or via our official WhatsApp community channel and contact section on this website.",
       category: "General"
     }
   ],
 
   // Contact Information
   contact: {
-    email: "contact@protonsolutions.tech",
-    supportEmail: "hackathon@protonsolutions.tech",
-    ngoCollaborationEmail: "ngo-collaboration@protonsolutions.tech",
+    email: "potrontech-hr@proton.me",
+    supportEmail: "potrontech-hr@proton.me",
+    ngoCollaborationEmail: "potrontech-hr@proton.me",
     phone: "+91 98765 43210",
     headquarters: "Bengaluru, Karnataka, India",
     workingHours: "Monday – Saturday: 9:00 AM – 7:00 PM IST"
