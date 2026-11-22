@@ -1,6 +1,6 @@
 /**
  * Configuration for Gemini Agentic Coding Hackathon 2026
- * Organized by Proton Solutions in Collaboration with [OFFICIAL NGO NAME]
+ * Organized by Proton Solutions in Collaboration with ROOTS & RISE Foundation
  * 
  * Centralized Event, Partner, Social Impact & Governance Configuration
  */
@@ -14,7 +14,7 @@ export const HACKATHON_CONFIG = {
   heroSupportingText: "Join Gemini Agentic Coding Hackathon 2026, where autonomous AI meets real-world challenges. Collaborate, innovate and develop intelligent solutions that can contribute to a better society.",
   badgeLabel: "Technology Meets Social Impact",
   format: "100% Online",
-  collaborationDescription: "An AI innovation initiative organised by Proton Solutions in collaboration with [OFFICIAL NGO NAME], bringing together developers, students and innovators to build intelligent technology solutions while contributing to meaningful social impact.",
+  collaborationDescription: "An AI innovation initiative organised by Proton Solutions in collaboration with ROOTS & RISE Foundation, bringing together developers, students and innovators to build intelligent technology solutions while contributing to meaningful social impact.",
 
   // Organizational Partners
   technologyOrganizer: {
@@ -23,54 +23,104 @@ export const HACKATHON_CONFIG = {
     tagline: "Pioneering Autonomous Systems & Developer Innovation",
     description: "Proton Solutions is a next-generation technology organization focused on cultivating cutting-edge engineering talent and accelerating innovation in artificial intelligence, cloud systems, and autonomous computing.",
     responsibilities: [
-      "Hackathon planning and execution",
-      "Technical infrastructure and cloud environment",
-      "Problem statements and technical challenges",
-      "Participant communication and support desk",
+      "Hackathon planning, curriculum and execution",
+      "Technical infrastructure and cloud runtime environment",
+      "Problem statements and technical challenges formulation",
+      "Participant communication and developer support desk",
       "Technical evaluation and code auditing",
       "Project mentoring by senior AI engineers",
-      "Submission management and judging coordination"
+      "Submission management and grand finale judging coordination"
     ],
     contactEmail: "hackathon@protonsolutions.tech",
     website: "https://protonsolutions.tech"
   },
 
   ngoPartner: {
-    name: "[OFFICIAL NGO NAME]",
-    shortName: "[NGO Partner]",
-    role: "Official Collaboration Partner",
-    tagline: "Grassroots Community Development & Social Empowerment",
-    description: "[OFFICIAL NGO NAME] is a grassroots non-profit organisation committed to driving sustainable community empowerment, rural education, accessible healthcare, and socio-economic resilience across underserved regions.",
-    mission: "To eliminate socio-economic and digital disparities across rural communities by fostering inclusive education, sustainable livelihoods, and accessible healthcare through ethical partnerships.",
-    vision: "An equitable future where rural and underprivileged populations are empowered with self-reliance, modern tools, and community-driven social infrastructure.",
-    registrationInfo: "[Pending Formal Verification & Document Ratification - Registration / Darpan ID: NGO-REG-XXXXX-PENDING]",
-    website: "https://example-ngo-partner.org",
-    contactEmail: "ngo-collaboration@protonsolutions.tech",
-    areasOfOperation: "[Pan-India Grassroots Outreach • State and District Chapters to be Specified upon Formal Agreement]",
+    name: "ROOTS & RISE Foundation",
+    shortName: "ROOTS & RISE",
+    role: "Official Social Impact Collaboration Partner",
+    tagline: "Growing Together. Changing Lives.",
+    description: "ROOTS & RISE Foundation is a community-driven nonprofit organization empowering rural India across 142 Gram Panchayats through quality education, women self-help collectives, water conservation, sustainable agriculture, and accessible healthcare.",
+    mission: "To partner with rural and tribal communities to eliminate generational poverty through dignified livelihoods, equitable access to quality education, community-controlled water systems, and women-led economic self-reliance.",
+    vision: "An India of flourishing, resilient villages where every child enjoys joyful learning, every woman exercises economic freedom, every farmer practices ecological agriculture, and human dignity is universally respected.",
+    legalStatus: "Section 8 Non-Profit Company (Registered in India)",
+    cin: "U85300DL2021NPL389012",
+    registrationInfo: "Registered Section 8 Non-Profit • CIN: U85300DL2021NPL389012 • Section 80G & 12A Certified • FCRA Compliant",
+    taxExemption: "Section 80G & 12A Certified under the Indian Income Tax Act",
+    website: "https://roots-and-rise-l27a.vercel.app/",
+    contactEmail: "contact@rootsandrise.org",
+    volunteerEmail: "volunteer@rootsandrise.org",
+    phone: "+91 11 4987 6500 / +91 11 4987 6501",
+    workingHours: "Monday to Friday: 9:30 AM – 5:30 PM IST | Saturday: 10:00 AM – 2:00 PM IST",
+    registeredOffice: "B-14 Institutional Area, New Delhi 110016",
+    tribalHub: "Gram Seva Bhavan, Bichhiya Road, Mandla – 481661 (Madhya Pradesh)",
+    areasOfOperation: "142 Gram Panchayats across Rajasthan (Barmer, Jalore), Madhya Pradesh (Mandla Tribal Hub), Odisha (Mayurbhanj, Keonjhar), and West Bengal (Sundarbans)",
     responsibilities: [
-      "Social-impact collaboration and domain advisory",
-      "Providing relevant community challenges and real-world contexts",
-      "Social development and grassroots guidance",
-      "Community engagement where formally agreed",
-      "Reviewing the social relevance and ethical impact of projects",
-      "Supporting impact reporting and field validation where agreed"
+      "Social-impact collaboration and rural domain advisory",
+      "Providing real-world community problem contexts and field insights",
+      "Advising on grassroots scalability, ethics, and vernacular usability",
+      "Community engagement and beneficiary challenge definition",
+      "Reviewing the social relevance, impact depth, and utility of submissions",
+      "Supporting post-event impact validation and pilot implementation"
+    ],
+    leadership: [
+      {
+        name: "Dr. Anandita Sen",
+        role: "Advisory Director – Rural Public Health",
+        focusArea: "Maternal-child health & telemedicine clinics in Eastern India"
+      },
+      {
+        name: "Harishankar Meena",
+        role: "Lead Strategist – Community Watersheds",
+        focusArea: "Decentralized check dams, stepwell revival & Jal Swaraj"
+      },
+      {
+        name: "Sunita Soren",
+        role: "Director – Women Collectives & Livelihoods",
+        focusArea: "Women Producer Companies, Sabai grass weaving & fair market linkage"
+      },
+      {
+        name: "Vikram Joshi",
+        role: "Operations & Volunteer Coordinator",
+        focusArea: "Fellowships, university partnerships & field camp deployments"
+      }
     ],
     initiatives: [
       {
-        title: "Rural Development & Agri-Livelihoods",
-        description: "Supporting smallholder farmers, local water conservation, sustainable farming practices, and rural micro-enterprises."
+        title: "Rural Skills & Livelihood Initiative",
+        category: "Livelihoods",
+        stat: "600+ Youth",
+        description: "Establishing solar-powered skill development hubs training rural youth in agro-processing, textile weaving, and electrical maintenance with direct cooperative placement."
       },
       {
-        title: "Vernacular Education & Digital Literacy",
-        description: "Enabling foundational learning, regional-language digital education, and vocational skills for underprivileged youth."
+        title: "Joyful Learning Centers (Education for Every Child)",
+        category: "Education",
+        stat: "35+ Schools",
+        description: "Upgrading 35 single-teacher tribal schools with multilingual libraries, STEM learning kits, and community teacher fellowships for first-generation learners."
       },
       {
-        title: "Primary Healthcare Accessibility",
-        description: "Connecting remote hamlets with preventive health awareness, primary triage support, and maternal health guidance."
+        title: "Jal Swaraj: Community Water & Check Dams",
+        category: "Water & Environment",
+        stat: "18 Stepwells",
+        description: "Constructing community check dams, reviving 18 historic stepwells, and deploying gravity-based bio-sand filters for fluoride-free drinking water."
       },
       {
-        title: "Women & Youth Community Empowerment",
-        description: "Fostering Self-Help Groups (SHGs), craft cooperatives, and digital platforms to generate local economic opportunities."
+        title: "Women Entrepreneurship & SHG Loom Collective",
+        category: "Women Empowerment",
+        stat: "450+ Women",
+        description: "Organizing 450 rural women weavers and forest produce collectors into registered producer companies with 100% women-owned equity and direct fair market linkages."
+      },
+      {
+        title: "Paramparik Krishi: Natural Farming & Millet Revival",
+        category: "Sustainable Agriculture",
+        stat: "320+ Families",
+        description: "Transitioning 320 smallholder farming families to zero-chemical natural farming, desi heritage seed conservation, and bio-fertilizer preparation."
+      },
+      {
+        title: "Sanjeevani: Mobile Rural Health Clinics",
+        category: "Healthcare",
+        stat: "Tele-Triage",
+        description: "Deploying solar water ambulances in the Sundarbans and all-terrain medical vans with telemedicine diagnostic hubs to reach isolated hamlets."
       }
     ]
   },
@@ -79,42 +129,42 @@ export const HACKATHON_CONFIG = {
   socialImpact: {
     sectionTitle: "Technology With a Purpose",
     sectionSubtitle: "Bridging AI Innovation with Real-World Community Needs",
-    description: "We believe technology should solve meaningful problems. Through our collaboration with [OFFICIAL NGO NAME], we aim to encourage innovators to explore how AI and autonomous systems can support rural communities, improve access to opportunities and contribute to sustainable development.",
+    description: "We believe technology should solve meaningful problems. Through our collaboration with ROOTS & RISE Foundation, we aim to encourage innovators to explore how AI and autonomous systems can support rural communities, improve access to opportunities and contribute to sustainable development.",
     focusAreas: [
       {
         id: "rural-development",
         number: "01",
-        title: "Rural Development",
-        tagline: "Agri-Tech & Sustainable Infrastructure",
-        description: "Empowering farmers and rural cooperatives with autonomous market intelligence, weather resilience agents, and water distribution management.",
-        impactGoal: "Enhancing farm yield and supply-chain efficiency for grassroots agricultural communities.",
+        title: "Rural Development & Agri-Tech",
+        tagline: "Agri-Tech & Sustainable Watersheds",
+        description: "Empowering smallholder farmers and village watershed committees with autonomous crop diagnostics, weather resilience agents, and decentralized water management.",
+        impactGoal: "Enhancing farm yield and supply-chain transparency across Rajasthan and Madhya Pradesh hamlets.",
         image: "https://images.unsplash.com/photo-1595278069441-2cf29f8005a4?auto=format&fit=crop&w=800&q=80"
       },
       {
         id: "education-learning",
         number: "02",
-        title: "Education and Learning",
-        tagline: "Vernacular & Accessible AI Tutoring",
-        description: "Democratizing foundational education with autonomous bilingual tutors, audio-first learning companions, and personalized learning aids for first-generation learners.",
-        impactGoal: "Bridging the rural-urban learning divide through low-bandwidth intelligent educational tools.",
+        title: "Education & Vernacular Learning",
+        tagline: "Multilingual AI Tutors & STEM Labs",
+        description: "Democratizing foundational education with autonomous bilingual tutors, audio-first learning companions, and interactive STEM learning aids tailored for rural schools.",
+        impactGoal: "Bridging the rural-urban learning divide for first-generation learners across tribal learning centers.",
         image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
       },
       {
         id: "healthcare-accessibility",
         number: "03",
-        title: "Healthcare Accessibility",
-        tagline: "Community Health & Primary Triage",
-        description: "Equipping ASHA and community health workers with AI triage assistants, vernacular health communication bots, and vaccine tracking agent networks.",
-        impactGoal: "Reducing maternal and pediatric diagnostic delays in primary health centres across remote areas.",
+        title: "Healthcare Accessibility & Tele-Triage",
+        tagline: "Community Health & Early Outbreak Detection",
+        description: "Equipping ASHA workers and mobile health clinics with AI triage assistants, vernacular health communication bots, and symptom tracking agents.",
+        impactGoal: "Accelerating maternal and pediatric primary diagnostics across hard-to-reach tribal and riverine terrains.",
         image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80"
       },
       {
         id: "community-empowerment",
         number: "04",
-        title: "Community Empowerment",
-        tagline: "Artisan Markets & Welfare Access",
-        description: "Building autonomous systems that connect rural artisans directly to fair trade buyers and streamline civic grievance redressal with government welfare schemes.",
-        impactGoal: "Unlocking direct economic dignity and citizen entitlement access without predatory middlemen.",
+        title: "Community & Women Empowerment",
+        tagline: "Artisan Producer Collectives & Fair Trade",
+        description: "Building autonomous systems that connect rural women artisans directly to fair trade buyers, eliminating broker exploitation and streamlining welfare access.",
+        impactGoal: "Unlocking direct economic dignity and citizen entitlement navigation for rural families.",
         image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
       }
     ]
@@ -128,37 +178,37 @@ export const HACKATHON_CONFIG = {
       title: "AI-Powered Rural Education Assistance",
       description: "Autonomous voice-first and vernacular multi-agent tutors that explain complex STEM concepts in native regional languages without requiring high-speed broadband.",
       techFocus: "Gemini Multimodal • Offline Vector Retrieval • Audio In/Out Agent Loops",
-      communityImpact: "Helps rural students learn at their own pace in their mother tongue."
+      communityImpact: "Supports joyful foundational literacy and STEM learning in tribal community schools."
     },
     {
       id: "track-2",
       number: "02",
       title: "Smart Agricultural Support & Advisory",
-      description: "Proactive crop pest diagnosis and weather risk warning agents that analyze smartphone photos and satellite forecasts to advise marginal farmers in real time.",
+      description: "Proactive crop pest diagnosis and weather risk warning agents that analyze smartphone photos and regional rainfall patterns to advise smallholders in real time.",
       techFocus: "Gemini Vision • Soil Data Integration • Action Planning Swarms",
-      communityImpact: "Protects harvest yields and minimizes pesticide expenditure for family farms."
+      communityImpact: "Protects harvest yields and assists transition to chemical-free natural farming."
     },
     {
       id: "track-3",
       number: "03",
       title: "Rural Healthcare Information & Triage",
-      description: "Intelligent symptom-checking workflows designed for primary health volunteers, alerting medical authorities to potential seasonal outbreaks.",
+      description: "Intelligent symptom-checking workflows designed for mobile clinics and ASHA health volunteers, alerting medical teams to potential seasonal outbreaks.",
       techFocus: "Agentic Tool Use • Medical Knowledge Graphs • Structured Triage APIs",
-      communityImpact: "Speeds up early treatment detection in areas with acute doctor shortages."
+      communityImpact: "Speeds up early treatment in remote riverine and forest hamlets."
     },
     {
       id: "track-4",
       number: "04",
       title: "AI-Based Livelihood & Skill Matching",
-      description: "Autonomous skill mapping and vernacular resume builders matching rural youth and informal workers with verified local employment and vocational opportunities.",
+      description: "Autonomous skill mapping and vernacular resume builders matching rural youth and women artisans with certified vocational opportunities and cooperative buyers.",
       techFocus: "Multi-Agent Profiling • Conversational Extraction • Geo-spatial Job Routing",
-      communityImpact: "Connects informal workers directly to fair, dignified work opportunities."
+      communityImpact: "Connects rural trainees directly to fair wages and self-help cooperative ventures."
     },
     {
       id: "track-5",
       number: "05",
       title: "Community Resource & Water Management",
-      description: "Sensor-data and drone-imagery reasoning agents that optimize community water tanks, canal releases, and village energy micro-grids during droughts.",
+      description: "Sensor-data and drone-imagery reasoning agents that optimize community check dams, stepwell reserves, and fluoride-free water allocation during droughts.",
       techFocus: "Autonomous Time-Series Reasoning • Alert Dispatch • Predictive Maintenance",
       communityImpact: "Preserves critical drinking and irrigation water in drought-vulnerable villages."
     },
@@ -166,9 +216,9 @@ export const HACKATHON_CONFIG = {
       id: "track-6",
       number: "06",
       title: "Digital Access to Government Welfare Schemes",
-      description: "Bilingual entitlement navigators that guide illiterate and elderly citizens through documentation requirements for scholarships, pensions, and housing subsidies.",
+      description: "Bilingual entitlement navigators that guide citizens through documentation requirements for scholarships, pensions, Kisan credit, and housing subsidies.",
       techFocus: "Agentic Document Parsing • Multilingual Speech • Form Auto-Filling Agents",
-      communityImpact: "Ensures government subsidies reach legitimate beneficiaries without broker exploitation."
+      communityImpact: "Ensures government welfare subsidies reach verified families without broker commissions."
     }
   ],
 
@@ -176,8 +226,8 @@ export const HACKATHON_CONFIG = {
   transparency: {
     sectionTitle: "Your Participation. A Bigger Purpose.",
     sectionSubtitle: "Ethical Financial Stewardship & Transparent Collaboration",
-    summary: "Proton Solutions and [OFFICIAL NGO NAME] believe in 100% financial openness. Here is how your ₹250 registration fee is structured and governed across technical operations, prizes, and social impact.",
-    disclaimer: "Legal Notice: The ₹250 registration fee is an event participation fee collected exclusively through Unstop and is NOT a tax-deductible charitable donation. Any financial contribution to [OFFICIAL NGO NAME] from operational surplus will be disclosed in the post-hackathon Impact and Transparency Report following formal mutual agreement.",
+    summary: "Proton Solutions and ROOTS & RISE Foundation believe in 100% financial openness. Here is how your ₹250 registration fee is structured and governed across technical operations, prizes, and social impact.",
+    disclaimer: "Legal Notice: The ₹250 registration fee is an event participation fee collected exclusively through Unstop and is NOT a tax-deductible charitable donation. Any financial contribution to ROOTS & RISE Foundation from operational surplus will be disclosed in the post-hackathon Impact and Transparency Report following formal mutual agreement.",
     financialBreakdown: [
       {
         item: "Total Registration Revenue",
@@ -201,8 +251,8 @@ export const HACKATHON_CONFIG = {
       },
       {
         item: "NGO Social Contribution",
-        share: "[Subject to Formal MoU Agreement]",
-        description: "Operational surplus allocated to grassroots initiatives upon formal signoff."
+        share: "Net Operational Surplus",
+        description: "Agreed post-hackathon operational surplus contributed to ROOTS & RISE rural initiatives."
       },
       {
         item: "Final Transfer Confirmation",
@@ -229,7 +279,7 @@ export const HACKATHON_CONFIG = {
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSc-EXAMPLE-PROTON-GEMINI-2026/viewform",
     whatsappChannelUrl: "https://whatsapp.com/channel/0029VbDpw0m1iUxbAtgMO71Z",
     discordServerUrl: "#",
-    githubOrgUrl: "#",
+    githubOrgUrl: "https://github.com/venkyworldz6k-Venky/Hackathon-2k26",
   },
 
   // Payment System Information
@@ -381,8 +431,8 @@ export const HACKATHON_CONFIG = {
     },
     {
       id: "faq-2",
-      question: "What is the role of the NGO collaboration partner?",
-      answer: "The hackathon is organized by Proton Solutions in collaboration with [OFFICIAL NGO NAME]. The NGO partner collaborates to provide real-world community development perspectives, social-impact problem themes, and guidance on the grassroots relevance of participant solutions.",
+      question: "Who is the NGO collaboration partner?",
+      answer: "The hackathon is organized by Proton Solutions in official collaboration with ROOTS & RISE Foundation (https://roots-and-rise-l27a.vercel.app/), a registered Section 8 non-profit organization (CIN: U85300DL2021NPL389012) empowering rural communities across 142 Gram Panchayats through education, women self-help collectives, water sustainability, and healthcare.",
       category: "General"
     },
     {
@@ -394,7 +444,7 @@ export const HACKATHON_CONFIG = {
     {
       id: "faq-4",
       question: "Is the registration fee a charitable donation?",
-      answer: "No. The ₹250 fee is an event participation fee that covers hackathon operations, Unstop platform charges, and the ₹24,000 prize pool. It is strictly non-refundable and not a direct tax-exempt donation. Any agreed contribution to the NGO will be published transparently in our post-event report.",
+      answer: "No. The ₹250 fee is an event participation fee that covers hackathon operations, Unstop platform charges, and the ₹24,000 prize pool. It is strictly non-refundable and not a direct tax-exempt donation. Any agreed contribution to ROOTS & RISE Foundation from operational surplus will be published transparently in our post-event report.",
       category: "Payment"
     },
     {
@@ -412,7 +462,7 @@ export const HACKATHON_CONFIG = {
     {
       id: "faq-7",
       question: "What is the 'AI for Social Good' track?",
-      answer: "It is a dedicated challenge category encouraging participants to build autonomous agent solutions that address rural education, agricultural sustainability, community healthcare, and local livelihoods. Official problem statements will be released on December 3, 2026.",
+      answer: "It is a dedicated challenge category encouraging participants to build autonomous agent solutions addressing rural education, agricultural sustainability, community healthcare, and local livelihoods inspired by ROOTS & RISE Foundation's grassroots initiatives. Official problem statements will be released on December 3, 2026.",
       category: "Submissions"
     },
     {

@@ -168,7 +168,14 @@ export const About: React.FC = () => {
               </div>
 
               <div className="pt-4 border-t border-[#F3F0E8]/10 text-xs font-mono text-[#F3F0E8]/60 flex items-center justify-between">
-                <span className="italic">Verification pending official MoU</span>
+                <a
+                  href={ngoPartner.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#F2B544] hover:underline"
+                >
+                  roots-and-rise-l27a.vercel.app
+                </a>
                 <span className="text-[#F2B544]">Grassroots Partner</span>
               </div>
             </div>

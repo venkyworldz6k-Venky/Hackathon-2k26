@@ -52,3 +52,16 @@ export interface FinancialBreakdownItem {
   share: string;
   description: string;
 }
+
+export interface NgoInitiativeItem {
+  title: string;
+  category: string;
+  description: string;
+  stat?: string;
+}
+
+export interface NgoLeaderItem {
+  name: string;
+  role: string;
+  focusArea: string;
+}

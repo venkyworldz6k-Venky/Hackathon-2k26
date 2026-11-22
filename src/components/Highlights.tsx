@@ -21,8 +21,8 @@ export const Highlights: React.FC = () => {
     },
     {
       icon: <Shield className="w-6 h-6 text-[#F2B544]" />,
-      title: "NGO Collaboration",
-      description: "Collaborate within a framework shaped by grassroots community perspectives and ethical social impact guidance."
+      title: "ROOTS & RISE Collaboration",
+      description: "Collaborate on authentic grassroots problem themes framed by ROOTS & RISE Foundation across 142 Gram Panchayats."
     },
     {
       icon: <Zap className="w-6 h-6 text-[#C6FF3D]" />,

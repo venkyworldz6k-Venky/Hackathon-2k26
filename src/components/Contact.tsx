@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, HeartHandshake } from 'lucide-react';
 import { HACKATHON_CONFIG } from '../config/hackathon';
 
 export const Contact: React.FC = () => {
@@ -80,6 +80,27 @@ export const Contact: React.FC = () => {
                 </p>
                 <span className="text-xs text-[#F3F0E8]/60 mt-1 block">
                   {HACKATHON_CONFIG.contact.headquarters} • Online Global Operations
+                </span>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl glass-teal border border-[#F2B544]/30 flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-[#0a3534] border border-[#F2B544]/40 flex items-center justify-center text-[#F2B544] flex-shrink-0">
+                <HeartHandshake className="w-6 h-6 text-[#F2B544]" />
+              </div>
+              <div>
+                <span className="text-xs font-mono text-[#F2B544] uppercase">NGO Partner Desk</span>
+                <p className="text-base font-bold text-[#F3F0E8] mt-0.5">
+                  {HACKATHON_CONFIG.ngoPartner.name}
+                </p>
+                <a
+                  href={`mailto:${HACKATHON_CONFIG.ngoPartner.contactEmail}`}
+                  className="text-xs text-[#C6FF3D] hover:underline mt-0.5 block font-mono"
+                >
+                  {HACKATHON_CONFIG.ngoPartner.contactEmail}
+                </a>
+                <span className="text-xs text-[#F3F0E8]/60 mt-1 block">
+                  {HACKATHON_CONFIG.ngoPartner.registeredOffice}
                 </span>
               </div>
             </div>

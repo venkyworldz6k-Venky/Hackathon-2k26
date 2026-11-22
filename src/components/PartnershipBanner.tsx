@@ -13,15 +13,15 @@ export const PartnershipBanner: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#073B3A] border border-[#F2B544]/40 text-[#F2B544] text-xs font-mono font-bold mb-4 tracking-wider uppercase">
-            <HeartHandshake className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#073B3A] border border-[#F2B544]/40 text-[#F2B544] text-xs font-mono font-bold mb-4 tracking-wider uppercase shadow-warm-glow">
+            <HeartHandshake className="w-3.5 h-3.5 text-[#F2B544]" />
             <span>OFFICIAL STRATEGIC COLLABORATION</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-[#F3F0E8] font-display tracking-tight mb-4">
             Together, Building Technology for Social Good.
           </h2>
           <p className="text-[#F3F0E8]/80 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            A collaborative initiative uniting engineering excellence with grassroots social development to address real-world community challenges.
+            A collaborative initiative uniting engineering excellence from <strong className="text-white">Proton Solutions</strong> with verified grassroots impact from <strong className="text-[#F2B544]">{ngoPartner.name}</strong>.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export const PartnershipBanner: React.FC = () => {
                   <h3 className="text-2xl font-black text-[#F3F0E8] font-display tracking-tight">
                     {ngoPartner.name}
                   </h3>
-                  <p className="text-xs font-mono text-[#F2B544] font-semibold">{ngoPartner.tagline}</p>
+                  <p className="text-xs font-mono text-[#F2B544] font-semibold">"{ngoPartner.tagline}"</p>
                 </div>
               </div>
 
@@ -124,16 +124,24 @@ export const PartnershipBanner: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-[#F3F0E8]/10 flex items-center justify-between text-xs font-mono text-[#F3F0E8]/60">
-              <span className="italic">Details pending official ratification</span>
+            <div className="mt-6 pt-4 border-t border-[#F3F0E8]/10 flex items-center justify-between text-xs font-mono">
+              <a 
+                href={ngoPartner.website} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-[#F2B544] hover:underline flex items-center gap-1 font-bold"
+              >
+                <span>roots-and-rise-l27a.vercel.app</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
               <span className="text-[#F2B544]">Social Partner</span>
             </div>
           </div>
         </div>
 
-        {/* Disclaimer Note regarding partnership ratification */}
-        <div className="mt-8 text-center text-xs font-mono text-[#F3F0E8]/60 max-w-2xl mx-auto">
-          <span>* Official NGO name, logo, and legal registration identifiers are represented via placeholders pending formal execution of mutual partnership documentation.</span>
+        {/* Partnership Assurance Note */}
+        <div className="mt-8 text-center text-xs font-mono text-[#F3F0E8]/70 max-w-2xl mx-auto">
+          <span>Official collaboration between Proton Solutions (Technology Host) and ROOTS & RISE Foundation (Section 8 Non-Profit • CIN: U85300DL2021NPL389012).</span>
         </div>
       </div>
     </section>
