@@ -24,16 +24,11 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { label: 'About', href: '#about' },
-    { label: 'Social Impact', href: '#social-impact' },
     { label: 'NGO Partner', href: '#ngo-partner' },
     { label: 'Tracks', href: '#tracks' },
-    { label: 'Prizes', href: '#prizes' },
     { label: 'Timeline', href: '#timeline' },
-    { label: 'Transparency', href: '#transparency' },
-    { label: 'Register', href: '#register' },
+    { label: 'Prizes', href: '#prizes' },
     { label: 'FAQs', href: '#faqs' },
-    { label: 'Terms', action: onOpenTerms },
-    { label: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -68,55 +63,34 @@ export const Navbar: React.FC<NavbarProps> = ({
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-5">
-            {navLinks.map((item, idx) =>
-              item.action ? (
-                <button
-                  key={idx}
-                  onClick={item.action}
-                  className="text-xs font-medium text-[#F3F0E8]/80 hover:text-[#C6FF3D] transition-colors cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              ) : (
-                <a
-                  key={idx}
-                  href={item.href}
-                  className="text-xs font-medium text-[#F3F0E8]/80 hover:text-[#C6FF3D] transition-colors"
-                >
-                  {item.label}
-                </a>
-              )
-            )}
+          <nav className="hidden lg:flex items-center gap-6">
+            {navLinks.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                className="text-xs font-semibold text-[#F3F0E8]/80 hover:text-[#C6FF3D] transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
-          {/* Desktop CTA Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3 flex-shrink-0">
-            <a
-              href={HACKATHON_CONFIG.placeholders.googleFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 text-xs font-medium rounded-lg text-[#F3F0E8] border border-[#F3F0E8]/20 hover:border-[#C6FF3D]/60 hover:text-[#C6FF3D] transition-all flex items-center gap-1.5"
-              title="Official Participant Google Form"
-            >
-              <FileText className="w-3.5 h-3.5 text-[#C6FF3D]" />
-              <span>Google Form</span>
-            </a>
-
+          {/* Desktop CTA Action Button */}
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
             <button
               onClick={onNavigateToRegister}
-              className="px-4 py-2 text-xs sm:text-sm font-bold rounded-lg bg-[#C6FF3D] text-[#073B3A] hover:bg-[#b5f524] transition-all duration-200 shadow-md hover:shadow-neon flex items-center gap-2 cursor-pointer"
+              className="px-4 py-2 text-xs font-black rounded-xl bg-[#C6FF3D] text-[#073B3A] hover:bg-[#b5f524] transition-all duration-200 shadow-neon flex items-center gap-1.5 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-[#073B3A]" />
-              <span>Register on Unstop (₹250)</span>
+              <Sparkles className="w-3.5 h-3.5 text-[#073B3A]" />
+              <span>Register (₹250)</span>
             </button>
           </div>
 
           {/* Mobile Menu Toggle Button */}
-          <div className="flex xl:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onNavigateToRegister}
-              className="px-3 py-1.5 text-xs font-bold rounded-md bg-[#C6FF3D] text-[#073B3A]"
+              className="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#C6FF3D] text-[#073B3A]"
             >
               Register
             </button>
@@ -133,52 +107,53 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#052928] border-b border-[#F3F0E8]/10 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
+        <div className="lg:hidden bg-[#052928] border-b border-[#F3F0E8]/10 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
           <div className="flex flex-col space-y-3">
-            {navLinks.map((item, idx) =>
-              item.action ? (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    item.action!();
-                  }}
-                  className="text-left py-2 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
-                >
-                  {item.label}
-                </button>
-              ) : (
-                <a
-                  key={idx}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
-                >
-                  {item.label}
-                </a>
-              )
-            )}
+            {navLinks.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="#transparency"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
+            >
+              Transparency
+            </a>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenTerms();
+              }}
+              className="text-left py-1 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
+            >
+              Terms & Conditions
+            </button>
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
+            >
+              Contact
+            </a>
           </div>
 
           <div className="pt-4 border-t border-[#F3F0E8]/10 flex flex-col gap-3">
-            <a
-              href={HACKATHON_CONFIG.placeholders.googleFormUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 text-sm font-medium rounded-lg text-[#F3F0E8] border border-[#F3F0E8]/20 flex items-center justify-center gap-2 hover:text-[#C6FF3D]"
-            >
-              <FileText className="w-4 h-4 text-[#C6FF3D]" />
-              <span>Complete Official Google Form</span>
-            </a>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onNavigateToRegister();
               }}
-              className="w-full py-3 text-sm font-bold rounded-lg bg-[#C6FF3D] text-[#073B3A] flex items-center justify-center gap-2 shadow-neon"
+              className="w-full py-2.5 text-xs font-black rounded-xl bg-[#C6FF3D] text-[#073B3A] flex items-center justify-center gap-2 shadow-neon cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
-              <span>REGISTER ON UNSTOP (₹250)</span>
+              <span>Register on Unstop (₹250)</span>
             </button>
           </div>
         </div>

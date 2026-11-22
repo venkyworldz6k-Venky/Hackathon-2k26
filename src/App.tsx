@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { NeuralCanvas } from './components/NeuralCanvas';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { PartnershipBanner } from './components/PartnershipBanner';
 import { About } from './components/About';
 import { SocialImpact } from './components/SocialImpact';
 import { NgoPartner } from './components/NgoPartner';
@@ -10,7 +9,6 @@ import { SocialGoodTracks } from './components/SocialGoodTracks';
 import { Highlights } from './components/Highlights';
 import { Prizes } from './components/Prizes';
 import { ImportantDates } from './components/ImportantDates';
-import { StayConnected } from './components/StayConnected';
 import { TransparencySection } from './components/TransparencySection';
 import { Registration } from './components/Registration';
 import { TermsSection, TermsModal } from './components/TermsAndConditions';
@@ -63,48 +61,42 @@ export const App = () => {
           onExploreClick={handleExploreClick}
         />
 
-        {/* 2. Official Collaboration Partners Section */}
-        <PartnershipBanner />
-
-        {/* 3. About Gemini Agentic 2026 */}
+        {/* 2. Collaborative Mission: Proton Solutions x ROOTS & RISE */}
         <About />
 
-        {/* 4. Social Impact: Technology With a Purpose */}
+        {/* 3. Social Impact Focus Areas */}
         <SocialImpact />
 
-        {/* 5. About Our NGO Partner Profile */}
+        {/* 4. Official NGO Partner Profile: ROOTS & RISE Foundation */}
         <NgoPartner />
 
-        {/* 6. AI for Social Good Challenge Tracks */}
+        {/* 5. AI for Social Good Challenge Tracks */}
         <SocialGoodTracks />
 
-        {/* 7. Key Event Pillars & Highlights */}
+        {/* 6. Key Event Pillars & Eligibility */}
         <Highlights />
 
-        {/* 8. Guaranteed Prize Pool (₹24,000) */}
+        {/* 7. Guaranteed Prize Pool (₹24,000) */}
         <Prizes />
 
-        {/* 9. Six-Phase Event Timeline */}
+        {/* 8. Six-Phase Event Timeline */}
         <ImportantDates />
 
-        {/* 10. Stay Connected (WhatsApp & Google Form) */}
-        <StayConnected />
-
-        {/* 11. Transparent Financial Governance & Contribution */}
+        {/* 9. Transparent Financial Governance & Contribution */}
         <TransparencySection />
 
-        {/* 12. 5-Step Official Registration via Unstop */}
+        {/* 10. 5-Step Official Registration via Unstop */}
         <Registration
           onOpenTerms={() => setIsTermsModalOpen(true)}
         />
 
-        {/* 13. Terms & Conditions Summary */}
+        {/* 11. Terms & Conditions Summary */}
         <TermsSection />
 
-        {/* 14. Frequently Asked Questions */}
+        {/* 12. Frequently Asked Questions */}
         <FAQ />
 
-        {/* 15. Contact Section */}
+        {/* 13. Contact Section */}
         <Contact />
       </main>
 
