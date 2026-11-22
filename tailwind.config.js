@@ -7,6 +7,36 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Core NGO Collaboration & Social Impact Palette
+        forest: {
+          DEFAULT: '#176B52',
+          light: '#1e8a69',
+          dark: '#125440',
+        },
+        deepGreen: {
+          DEFAULT: '#174C3D',
+          dark: '#0f3329',
+        },
+        warmYellow: {
+          DEFAULT: '#F2B544',
+          light: '#f5c66b',
+          dark: '#d69929',
+        },
+        softCoral: {
+          DEFAULT: '#E98268',
+          light: '#ef9d88',
+          dark: '#d2664d',
+        },
+        cream: {
+          DEFAULT: '#FFF8EC',
+          100: '#FAF4E8',
+          200: '#EDE4D3',
+        },
+        darkText: {
+          DEFAULT: '#263B35',
+          muted: '#3b554e',
+        },
+        // Existing Midnight Teal & High-Contrast Tech Palette
         teal: {
           950: '#031918',
           900: '#073B3A', // Deep Midnight Teal
@@ -48,6 +78,8 @@ export default {
         'gold-glow': '0 0 30px -5px rgba(255, 215, 0, 0.35)',
         'silver-glow': '0 0 30px -5px rgba(209, 213, 219, 0.35)',
         'bronze-glow': '0 0 30px -5px rgba(205, 127, 50, 0.35)',
+        'warm-glow': '0 0 30px -5px rgba(242, 181, 68, 0.35)',
+        'coral-glow': '0 0 30px -5px rgba(233, 130, 104, 0.35)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',

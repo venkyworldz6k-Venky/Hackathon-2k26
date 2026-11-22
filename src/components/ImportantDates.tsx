@@ -29,30 +29,59 @@ export const ImportantDates: React.FC = () => {
   // Active selected phase for desktop inspection (defaults to Phase 01 or 04)
   const [selectedPhase, setSelectedPhase] = useState<number>(0);
 
-  // Target: Registration Deadline: November 30, 2026 23:59:59 IST
-  const [regTimeLeft, setRegTimeLeft] = useState<TimeRemaining>({
+  // Dynamic registration status: upcoming (before Nov 23), open (Nov 23 - Nov 30), closed (after Nov 30)
+  const [regStatus, setRegStatus] = useState<'upcoming' | 'open' | 'closed'>('upcoming');
+  const [countdownData, setCountdownData] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
-    isPast: false,
+    badgeText: 'REGISTRATION LAUNCH COUNTDOWN',
+    titleText: 'Registration Opens November 23, 2026',
+    subtitleText: 'Opening 12:00 AM Indian Standard Time (IST) • ₹250 Entry Fee on Unstop',
   });
 
   useEffect(() => {
-    const regDeadline = new Date('2026-11-30T23:59:59+05:30').getTime();
+    const openingDate = new Date('2026-11-23T00:00:00+05:30').getTime();
+    const closingDate = new Date('2026-11-30T23:59:59+05:30').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();
-      const difference = regDeadline - now;
-      if (difference <= 0) {
-        setRegTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true });
+
+      if (now < openingDate) {
+        setRegStatus('upcoming');
+        const diff = openingDate - now;
+        setCountdownData({
+          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((diff % (1000 * 60)) / 1000),
+          badgeText: 'REGISTRATION LAUNCH COUNTDOWN',
+          titleText: 'Registration Opens November 23, 2026',
+          subtitleText: 'Opening 12:00 AM Indian Standard Time (IST) • ₹250 Entry Fee on Unstop • 100% Online',
+        });
+      } else if (now <= closingDate) {
+        setRegStatus('open');
+        const diff = closingDate - now;
+        setCountdownData({
+          days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((diff % (1000 * 60)) / 1000),
+          badgeText: 'REGISTRATION CLOSING COUNTDOWN',
+          titleText: 'Registration Closes November 30, 2026',
+          subtitleText: 'Deadline: 11:59 PM Indian Standard Time (IST) • ₹250 Entry Fee on Unstop • Verified Seats',
+        });
       } else {
-        setRegTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-          isPast: false,
+        setRegStatus('closed');
+        setCountdownData({
+          days: 0,
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+          badgeText: 'REGISTRATION CLOSED',
+          titleText: 'Registration Closed on November 30, 2026',
+          subtitleText: 'Participant Verification & Problem Release Underway',
         });
       }
     };
@@ -70,7 +99,7 @@ export const ImportantDates: React.FC = () => {
       shortTitle: "Registration Open",
       date: "November 23, 2026",
       time: "Portal Live • 100% Online",
-      statusLabel: "LIVE REGISTRATION",
+      statusLabel: regStatus === 'upcoming' ? "OPENS NOV 23" : regStatus === 'open' ? "LIVE REGISTRATION" : "CLOSED",
       icon: <UserPlus className="w-6 h-6 text-[#C6FF3D]" />,
       summary: "Registration opens for individuals and teams of up to 4 members.",
       points: [
@@ -78,7 +107,8 @@ export const ImportantDates: React.FC = () => {
         "Registration Mode: 100% Online",
         "Complete registration & payment before deadline"
       ],
-      isLive: true,
+      isLive: regStatus === 'open',
+      isUpcoming: regStatus === 'upcoming',
       is24h: false,
       isWinner: false,
     },
@@ -206,13 +236,13 @@ export const ImportantDates: React.FC = () => {
             <div className="text-center md:text-left">
               <span className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#073B3A] bg-[#C6FF3D] px-3.5 py-1 rounded-full uppercase mb-2 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-[#073B3A] animate-ping" />
-                REGISTRATION CLOSING COUNTDOWN
+                {countdownData.badgeText}
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-[#F3F0E8] font-display">
-                Registration Closes November 30, 2026
+                {countdownData.titleText}
               </h3>
               <p className="text-xs sm:text-sm text-[#F3F0E8]/70 mt-1 font-mono">
-                Deadline: 11:59 PM Indian Standard Time (IST) • ₹250 Entry Fee
+                {countdownData.subtitleText}
               </p>
             </div>
 
@@ -220,25 +250,25 @@ export const ImportantDates: React.FC = () => {
             <div className="grid grid-cols-4 gap-2 sm:gap-3 text-center flex-shrink-0">
               <div className="bg-[#073B3A] p-2 sm:p-3 rounded-2xl border border-[#C6FF3D]/30 min-w-[65px] sm:min-w-[78px]">
                 <span className="block text-2xl sm:text-3xl font-mono font-black text-[#C6FF3D]">
-                  {String(regTimeLeft.days).padStart(2, '0')}
+                  {String(countdownData.days).padStart(2, '0')}
                 </span>
                 <span className="text-[10px] text-[#F3F0E8]/60 uppercase font-mono">Days</span>
               </div>
               <div className="bg-[#073B3A] p-2 sm:p-3 rounded-2xl border border-[#C6FF3D]/30 min-w-[65px] sm:min-w-[78px]">
                 <span className="block text-2xl sm:text-3xl font-mono font-black text-[#C6FF3D]">
-                  {String(regTimeLeft.hours).padStart(2, '0')}
+                  {String(countdownData.hours).padStart(2, '0')}
                 </span>
                 <span className="text-[10px] text-[#F3F0E8]/60 uppercase font-mono">Hours</span>
               </div>
               <div className="bg-[#073B3A] p-2 sm:p-3 rounded-2xl border border-[#C6FF3D]/30 min-w-[65px] sm:min-w-[78px]">
                 <span className="block text-2xl sm:text-3xl font-mono font-black text-[#C6FF3D]">
-                  {String(regTimeLeft.minutes).padStart(2, '0')}
+                  {String(countdownData.minutes).padStart(2, '0')}
                 </span>
                 <span className="text-[10px] text-[#F3F0E8]/60 uppercase font-mono">Mins</span>
               </div>
               <div className="bg-[#073B3A] p-2 sm:p-3 rounded-2xl border border-[#C6FF3D]/30 min-w-[65px] sm:min-w-[78px]">
                 <span className="block text-2xl sm:text-3xl font-mono font-black text-[#C6FF3D]">
-                  {String(regTimeLeft.seconds).padStart(2, '0')}
+                  {String(countdownData.seconds).padStart(2, '0')}
                 </span>
                 <span className="text-[10px] text-[#F3F0E8]/60 uppercase font-mono">Secs</span>
               </div>
@@ -408,6 +438,21 @@ export const ImportantDates: React.FC = () => {
                       REGISTER ON UNSTOP (₹250)
                     </a>
                   </>
+                ) : currentPhase.isUpcoming ? (
+                  <>
+                    <p className="text-xs font-mono text-[#C6FF3D] uppercase font-bold mb-1">
+                      REGISTRATION OPENS NOV 23, 2026
+                    </p>
+                    <p className="text-sm text-[#F3F0E8]/80 mb-4">
+                      Fee: ₹250 per participant • 100% Online on Unstop
+                    </p>
+                    <a
+                      href="#register"
+                      className="px-6 py-3 rounded-xl bg-[#C6FF3D] text-[#073B3A] font-extrabold text-sm hover:bg-[#b5f524] transition-all shadow-neon"
+                    >
+                      PREVIEW UNSTOP REGISTRATION
+                    </a>
+                  </>
                 ) : currentPhase.isWinner ? (
                   <>
                     <Trophy className="w-10 h-10 text-[#FFD700] mb-2" />
@@ -528,7 +573,7 @@ export const ImportantDates: React.FC = () => {
                     ))}
                   </div>
 
-                  {phase.isLive && (
+                  {phase.isLive ? (
                     <div className="mt-4 pt-3 border-t border-[#F3F0E8]/10">
                       <a
                         href="#register"
@@ -537,7 +582,16 @@ export const ImportantDates: React.FC = () => {
                         PAY ₹250 & REGISTER
                       </a>
                     </div>
-                  )}
+                  ) : phase.isUpcoming ? (
+                    <div className="mt-4 pt-3 border-t border-[#F3F0E8]/10">
+                      <a
+                        href="#register"
+                        className="w-full py-2.5 rounded-lg bg-[#C6FF3D] text-[#073B3A] font-bold text-xs flex items-center justify-center gap-2"
+                      >
+                        OPENS NOV 23 • PREVIEW
+                      </a>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             ))}

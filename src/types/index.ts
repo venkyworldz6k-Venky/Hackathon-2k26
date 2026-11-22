@@ -27,3 +27,28 @@ export interface FAQItem {
   answer: string;
   category: 'General' | 'Payment' | 'Participation' | 'Submissions';
 }
+
+export interface SocialImpactFocusArea {
+  id: string;
+  number: string;
+  title: string;
+  tagline: string;
+  description: string;
+  impactGoal: string;
+  image: string;
+}
+
+export interface SocialGoodTrack {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+  techFocus: string;
+  communityImpact: string;
+}
+
+export interface FinancialBreakdownItem {
+  item: string;
+  share: string;
+  description: string;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sparkles, Terminal, FileText, ExternalLink } from 'lucide-react';
+import { Menu, X, Sparkles, Terminal, FileText, HeartHandshake } from 'lucide-react';
 import { HACKATHON_CONFIG } from '../config/hackathon';
 
 interface NavbarProps {
@@ -24,10 +24,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { label: 'About', href: '#about' },
+    { label: 'Social Impact', href: '#social-impact' },
+    { label: 'NGO Partner', href: '#ngo-partner' },
+    { label: 'Tracks', href: '#tracks' },
     { label: 'Prizes', href: '#prizes' },
     { label: 'Timeline', href: '#timeline' },
+    { label: 'Transparency', href: '#transparency' },
     { label: 'Register', href: '#register' },
-    { label: 'Connect', href: '#stay-connected' },
     { label: 'FAQs', href: '#faqs' },
     { label: 'Terms', action: onOpenTerms },
     { label: 'Contact', href: '#contact' },
@@ -37,33 +40,41 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#073B3A]/90 backdrop-blur-md border-b border-[#F3F0E8]/10 shadow-lg shadow-black/20 py-3'
-          : 'bg-transparent py-5'
+          ? 'bg-[#073B3A]/95 backdrop-blur-md border-b border-[#F3F0E8]/10 shadow-lg shadow-black/20 py-3'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
+        <div className="flex items-center justify-between gap-4">
+          {/* Brand Logo with Dual Organizer & Partner Indicator */}
+          <a href="#" className="flex items-center gap-3 group flex-shrink-0">
             <div className="w-10 h-10 rounded-xl bg-[#0a4c4b] border border-[#C6FF3D]/40 flex items-center justify-center text-[#C6FF3D] shadow-sm group-hover:border-[#C6FF3D] transition-colors">
               <Terminal className="w-5 h-5 text-[#C6FF3D]" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs uppercase tracking-widest text-[#C6FF3D] font-mono font-semibold">
-                {HACKATHON_CONFIG.organizer}
-              </span>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[10px] uppercase tracking-widest text-[#C6FF3D] font-mono font-bold">
+                  {HACKATHON_CONFIG.technologyOrganizer.name}
+                </span>
+                <span className="text-[10px] text-[#F3F0E8]/40 font-mono">✕</span>
+                <span className="text-[10px] uppercase tracking-widest text-[#F2B544] font-mono font-bold">
+                  {HACKATHON_CONFIG.ngoPartner.shortName}
+                </span>
+              </div>
               <span className="text-sm sm:text-base font-bold text-[#F3F0E8] tracking-tight group-hover:text-white transition-colors">
                 Gemini Agentic 2026
               </span>
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-7">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden xl:flex items-center gap-5">
             {navLinks.map((item, idx) =>
               item.action ? (
                 <button
                   key={idx}
                   onClick={item.action}
-                  className="text-sm font-medium text-[#F3F0E8]/80 hover:text-[#C6FF3D] transition-colors cursor-pointer"
+                  className="text-xs font-medium text-[#F3F0E8]/80 hover:text-[#C6FF3D] transition-colors cursor-pointer"
                 >
                   {item.label}
                 </button>
@@ -71,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <a
                   key={idx}
                   href={item.href}
-                  className="text-sm font-medium text-[#F3F0E8]/80 hover:text-[#C6FF3D] transition-colors"
+                  className="text-xs font-medium text-[#F3F0E8]/80 hover:text-[#C6FF3D] transition-colors"
                 >
                   {item.label}
                 </a>
@@ -79,13 +90,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </nav>
 
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Desktop CTA Action Buttons */}
+          <div className="hidden sm:flex items-center gap-3 flex-shrink-0">
             <a
               href={HACKATHON_CONFIG.placeholders.googleFormUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 text-xs font-medium rounded-lg text-[#F3F0E8] border border-[#F3F0E8]/20 hover:border-[#C6FF3D]/60 hover:text-[#C6FF3D] transition-all flex items-center gap-1.5"
-              title="Proton Solutions Official Participant Google Form"
+              className="px-3 py-1.5 text-xs font-medium rounded-lg text-[#F3F0E8] border border-[#F3F0E8]/20 hover:border-[#C6FF3D]/60 hover:text-[#C6FF3D] transition-all flex items-center gap-1.5"
+              title="Official Participant Google Form"
             >
               <FileText className="w-3.5 h-3.5 text-[#C6FF3D]" />
               <span>Google Form</span>
@@ -95,12 +107,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={onNavigateToRegister}
               className="px-4 py-2 text-xs sm:text-sm font-bold rounded-lg bg-[#C6FF3D] text-[#073B3A] hover:bg-[#b5f524] transition-all duration-200 shadow-md hover:shadow-neon flex items-center gap-2 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 text-[#073B3A]" />
               <span>Register on Unstop (₹250)</span>
             </button>
           </div>
 
-          <div className="flex sm:hidden items-center gap-2">
+          {/* Mobile Menu Toggle Button */}
+          <div className="flex xl:hidden items-center gap-2">
             <button
               onClick={onNavigateToRegister}
               className="px-3 py-1.5 text-xs font-bold rounded-md bg-[#C6FF3D] text-[#073B3A]"
@@ -109,7 +122,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-[#F3F0E8] hover:text-[#C6FF3D] hover:bg-[#0a4c4b]/50"
+              className="p-2 rounded-lg text-[#F3F0E8] hover:text-[#C6FF3D] hover:bg-[#0a4c4b]/50 cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6 text-[#C6FF3D]" />}
@@ -118,8 +131,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#052928] border-b border-[#F3F0E8]/10 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
+        <div className="xl:hidden bg-[#052928] border-b border-[#F3F0E8]/10 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
           <div className="flex flex-col space-y-3">
             {navLinks.map((item, idx) =>
               item.action ? (
@@ -129,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     setMobileMenuOpen(false);
                     item.action!();
                   }}
-                  className="text-left py-2 text-base font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
+                  className="text-left py-2 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
                 >
                   {item.label}
                 </button>
@@ -138,13 +152,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={idx}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 text-base font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
+                  className="py-2 text-sm font-medium text-[#F3F0E8]/90 hover:text-[#C6FF3D]"
                 >
                   {item.label}
                 </a>
               )
             )}
           </div>
+
           <div className="pt-4 border-t border-[#F3F0E8]/10 flex flex-col gap-3">
             <a
               href={HACKATHON_CONFIG.placeholders.googleFormUrl}
@@ -162,7 +177,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }}
               className="w-full py-3 text-sm font-bold rounded-lg bg-[#C6FF3D] text-[#073B3A] flex items-center justify-center gap-2 shadow-neon"
             >
-              <ExternalLink className="w-4 h-4" />
+              <Sparkles className="w-4 h-4" />
               <span>REGISTER ON UNSTOP (₹250)</span>
             </button>
           </div>
